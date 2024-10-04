@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    # image: flask
+    container_name: flask_container
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=True
+    ports:
+      - "5000:5000"
+
+  # Redis
+  redis:
+    image: redis:4.0.11-alpine
+    container_name: redis_container
